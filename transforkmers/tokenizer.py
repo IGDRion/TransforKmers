@@ -63,18 +63,27 @@ class DNATokenizer(PreTrainedTokenizer):
     def vocab_size(self):
         return len(self.get_vocab())
 
-    def _tokenize(self, text):
+    def _tokenize(self, s):
         k = self.k
-        max_len = self.model_max_length
-        if k > len(text):
-            raise Exception("kmer size should be longer than sequence.")
+        texts = s.split("|")
+
         yield self.cls_token
-        for i in range(len(text) - k):
-            # + 3 to compensate with [CLS] and [SEP]
-            if max_len is not None and i + 3 > max_len:
-                break
-            yield text[i : i + k]
-        yield self.sep_token
+        encoded = 1
+
+        for text in texts:
+            if k > len(text):
+                raise Exception("kmer size should be longer than sequence.")
+            
+            for i in range(len(text) - k):
+                yield text[i : i + k]
+                encoded += 1
+
+                if encoded + 3 > self.model_max_length:
+                    yield self.sep_token
+                    return
+            
+            yield self.sep_token
+            encoded += 1
 
     def _convert_token_to_id(self, token):
         return self.vocab.get(token, self.vocab.get(self.unk_token))
