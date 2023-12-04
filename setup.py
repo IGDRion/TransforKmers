@@ -15,7 +15,8 @@ setup(
         "console_scripts": ["transforkmers=transforkmers.commands:main"],
     },
     install_requires=[
-        "transformers>=4.18",
+        "transformers==4.27.2",
+        "tokenizers==0.13.2",
     ],
     python_requires=">=3.8",
 )
