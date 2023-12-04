@@ -2,7 +2,7 @@
 
 A task-agnostic facility to pretrain/finetune and use a Transformer based model to classify your DNA/RNA sequences.
 
-This repo is a wrapper around HuggingFace adapted to biological sequences. It's useful to easily
+This repo is a wrapper around [HuggingFace](https://huggingface.co/) adapted to biological sequences. It's useful to easily
 pretrain, finetune and use a transformer architecture powered by HuggingFace for a classification
 task.
 
@@ -17,7 +17,7 @@ conda install pytorch -c pytorch
 Then, install TransforKmers with pip:
 
 ```sh
-pip install git+https://github.com/mlorthiois/transforkmers
+pip install git+https://github.com/IGDRion/transforkmers
 ```
 
 ## General usage
