@@ -38,7 +38,7 @@ transforkmers predict \
 If you want to train a new model from scratch, several steps are provided.
 
 - For real examples, check used scripts inside `/scripts/`.
-- If you want to use an already pretrained model, go to step 4.
+- If you want to use an already pretrained model, go to [step 4](https://github.com/IGDRion/TransforKmers/#test-the-model). See also an usage in [ANNEXA](https://github.com/IGDRion/ANNEXA) for gene TSSs (transcript Start Sites) classification.
 
 ### 1. Create a tokenizer.
 
@@ -107,6 +107,8 @@ transforkmers finetune \
     --train_dataset /path/to/train.csv \
     --eval_dataset /path/to/eval.csv
 ```
+
+### 4. Test the model
 
 After the finetuning, you can test your model with your test dataset.
 
