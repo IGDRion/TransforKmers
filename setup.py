@@ -16,7 +16,7 @@ setup(
     },
     install_requires=[
         "transformers>=4.18,<4.28",
-        "mkl=2024.0",
+        "mkl<2024.1",
         "tokenizers<0.15",
     ],
     python_requires=">=3.8",
