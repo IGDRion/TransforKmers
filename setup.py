@@ -9,13 +9,14 @@ setup(
     ),
     author="Matthias Lorthiois",
     author_email="matthias.lorthiois@cnrs.fr",
-    url="https://github.com/mlorthiois/transforkmers",
+    url="https://github.com/IGDRion/transforkmers",
     packages=find_packages(),
     entry_points={
         "console_scripts": ["transforkmers=transforkmers.commands:main"],
     },
     install_requires=[
         "transformers>=4.18,<4.28",
+        "mkl=2024.0",
         "tokenizers<0.15",
     ],
     python_requires=">=3.8",
